@@ -1,0 +1,13 @@
+version: "2"
+services:
+  mlserver:
+    image: mlserver:latest
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./build
+    links:
+      - mongodb
+  
+  mongodb:
+    image: mongo:4.0.10-xenial
