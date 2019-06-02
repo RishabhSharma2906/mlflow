@@ -13,8 +13,10 @@ def base():
 def getListOfAllModels():
     all_models = insertRecordsModels()
     response_dict = {'model' : all_models }
-    response = json_util.dumps(response_dict)
-    return response, 200
+    response = app.response_class(response = json_util.dumps(response_dict),
+    status = 200,
+    mimetype = 'application/json')
+    return response
 
 if __name__ == "__main__":
     findConnection()
