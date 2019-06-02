@@ -5,4 +5,4 @@ RUN pip install -r requirements.txt
 COPY MLService /build
 EXPOSE 5000
 ENTRYPOINT [ "python3" ]
-CMD [ "first.py"]
+CMD ["app.py"]
